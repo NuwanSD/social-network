@@ -28,7 +28,7 @@ export default function HomePage() {
         }}
       >
         <Group sx={{ height: 110, width: 110 }} />
-        <Typography>Reactivities</Typography>
+        <Typography variant="h2">Reactivities</Typography>
       </Box>
       <Typography variant="h3">Welcome Back</Typography>
       <Button
