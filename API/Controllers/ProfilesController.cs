@@ -1,6 +1,7 @@
 using System;
 using Application.Profiles.Commands;
 using Application.Profiles.DTOs;
+using Application.Profiles.Queries;
 using Application.Queries;
 using Domain;
 using Microsoft.AspNetCore.Mvc;
@@ -62,6 +63,13 @@ public class ProfilesController : BaseApiController
                 UserId = userId,
                 Perdicate = predicate
             }));
+    }
+
+    [HttpGet("{userId}/activities")]
+    public async Task<IActionResult> GetUserActivities(string userId, string filter)
+    {
+        return HandleResult(await Mediator.Send(new GetUserActivities.Query
+        { UserId = userId, Filter = filter }));
     }
 
 
