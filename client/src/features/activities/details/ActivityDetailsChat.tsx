@@ -15,7 +15,9 @@ import { observer } from "mobx-react-lite";
 
 const ActivityDetailsChat = observer(function ActivityDetailsChat() {
   const { id } = useParams();
+
   const { commentStore } = useComments(id);
+
   const {
     register,
     handleSubmit,
@@ -95,7 +97,7 @@ const ActivityDetailsChat = observer(function ActivityDetailsChat() {
                       {comment.displayName}
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
-                      {timeAgo(new Date(comment.createdAt))}
+                      {timeAgo(new Date(comment.createAt))}
                     </Typography>
                   </Box>
 

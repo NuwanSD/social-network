@@ -54,7 +54,7 @@ type User = {
 
 type ChatComment = {
   id: string;
-  createdAt: Date;
+  createAt: Date;
   body: string;
   userId: string;
   displayName: string;
